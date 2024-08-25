@@ -15,17 +15,17 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner demo(UserRepository userRepository, BCryptPasswordEncoder encoder) {
-		return args -> {
-			if (userRepository.findByEmail("my_email@example.com").isEmpty()) {
-				User user = new User();
-				user.setFirstName("John");
-				user.setLastName("Smith");
-				user.setEmail("my_email@example.com");
-				user.setPassword(encoder.encode("my_password"));
-				userRepository.save(user);
-			}
-		};
-	}
+//	@Bean
+//	public CommandLineRunner demo(UserRepository userRepository, BCryptPasswordEncoder encoder) {
+//		return args -> {
+//			if (userRepository.findByEmail("my_email@example.com").isEmpty()) {
+//				User user = new User();
+//				user.setFirstName("John");
+//				user.setLastName("Smith");
+//				user.setEmail("my_email@example.com");
+//				user.setPassword(encoder.encode("my_password"));
+//				userRepository.save(user);
+//			}
+//		};
+//	}
 }
